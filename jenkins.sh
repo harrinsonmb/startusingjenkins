@@ -6,5 +6,3 @@ apt-get update
 apt-get -y install openjdk-8-jre openjdk-8-jdk
 apt-get -y install jenkins
 systemctl start jenkins
-echo "Jenkins admin password: "
-cat /var/lib/jenkins/secrets/initialAdminPassword

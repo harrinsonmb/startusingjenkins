@@ -16,11 +16,17 @@ git clone https://bitbucket.org/itnove/startusingjenkins.git
 
 ## Initial configuration
 
-* Start environment which is composed by a Jenkins node, a Sonarqube server and agent node.
+* Start environment which is composed by a Jenkins Master, Agent node and a Sonarqube server.
 
 ```shell
 vagrant up 
 ```
+
+* Install Docker Plugin for configure the agents
+
+You can download the plugin from [here](https://wiki.jenkins.io/display/JENKINS/Docker+Plugin)
+
+The image we are using is this [Jenkins SSH Slave](https://hub.docker.com/r/jenkins/ssh-slave/)
 
 ## Support
 
