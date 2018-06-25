@@ -5,6 +5,7 @@ Vagrant.configure(2) do |config|
     jenkins.vm.hostname = "jenkins"
     jenkins.vm.provision :shell, :path => "jenkins.sh"
     jenkins.vm.network "forwarded_port", guest: 8080, host: 8080
+    jenkins.vm.network "forwarded_port", guest: 50000, host: 50000
   end
 
   config.vm.define "sonarqube" do |sonarqube|
@@ -20,7 +21,7 @@ Vagrant.configure(2) do |config|
     agent.vm.network "private_network", ip: "192.168.11.3"
     agent.vm.hostname = "agent"
     agent.vm.provision :shell, :path => "docker.sh"
-    agent.vm.network "forwarded_port", guest: 50000, host: 50000
+    agent.vm.network "forwarded_port", guest: 50000, host: 50001
     agent.vm.network "forwarded_port", guest: 2376, host: 2376
     agent.vm.network "forwarded_port", guest: 4243, host: 4243
   end
